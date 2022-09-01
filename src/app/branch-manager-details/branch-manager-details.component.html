@@ -1,0 +1,27 @@
+<div style="background-color: #74aac7; height: 100%;">
+<h3>Branch Manager Details</h3>
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                <th scope="col">Branch ID</th>
+                <th scope="col">Update</th>
+            </tr>
+        </thead>
+        <tbody style="background-color: #74C7B8;">
+            <tr *ngFor="let r of result.t">
+                <td>{{r.id}}</td>
+                <td>{{r.name}}</td>
+                <td>{{r.email}}</td>
+                <td>{{r.password}}</td>
+                <td>{{r.branch.id}}</td>
+                <td><button class="btn btn-primary" type="button" [routerLink]="['/edit-branchManager/',r.id]">Update</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

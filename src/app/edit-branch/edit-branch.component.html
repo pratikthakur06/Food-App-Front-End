@@ -1,0 +1,40 @@
+<div class="container" style="background-color: #FECD70;">
+    <h3>Update Branch Details</h3>
+    <form [formGroup]="updateForm" (ngSubmit)="editBranch()" style="border: 5px solid blue; padding: 40px;">
+        <div class="form-group">
+            <label for="name">Enter name</label>
+            <input type="text" class="form-control" id="name" name="name" formControlName="name"
+                placeholder="Enter the User Name" [(ngModel)]="selectedBranch.name">
+            <span *ngIf="name?.invalid && name?.touched" style="color: red;">Please enter valid name</span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Enter Email</label>
+            <input type="email" class="form-control" id="email" name="email" formControlName="email"
+                placeholder="Enter your Email ID" [(ngModel)]="selectedBranch.email">
+            <span *ngIf="email?.invalid && email?.touched" style="color: red;">Please enter valid email Id</span>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Enter address</label>
+            <input type="text" class="form-control" id="address" name="address" formControlName="address"
+                placeholder="Enter the address" [(ngModel)]="selectedBranch.address">
+            <span *ngIf="address?.invalid && address?.touched" style="color: red;">Please enter valid address</span>
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNumber">Enter Phone Number</label>
+            <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" formControlName="phoneNumber"
+                placeholder="Enter the phoneNumber" [(ngModel)]="selectedBranch.phoneNumber">
+            <span *ngIf="phoneNumber?.invalid && phoneNumber?.touched" style="color: red;">Please enter valid phoneNumber</span>
+        </div>
+
+        <div class="form-group">
+            <label for="adminId">Enter Admin Id</label>
+            <input type="number" class="form-control" id="adminId" name="adminId" formControlName="adminId"
+                placeholder="Enter the Admin ID" [(ngModel)]="selectedBranch.admin.id">
+            <span *ngIf="adminId?.invalid && adminId?.touched" style="color: red;">Please enter valid admin id</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

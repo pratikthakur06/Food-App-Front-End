@@ -1,0 +1,69 @@
+<div class="container" style="background-color: #FECD70;">
+    <h3>Add New Food Order</h3>
+    <form [formGroup]="updateForm" (ngSubmit)="editFoodOrder()">
+        <div class="form-group">
+            <label for="customerName">Enter Customer Name</label>
+            <input type="text" class="form-control" id="customerName" name="customerName" formControlName="customerName"
+                placeholder="Enter the Customer Name" [(ngModel)]="selectedFoodOrder.customerName">
+            <span *ngIf="customerName?.invalid && customerName?.touched" style="color: red;">Please enter valid customer name</span>
+        </div>
+
+        <div class="form-group">
+            <label for="customerEmail">Enter Customer Email</label>
+            <input type="email" class="form-control" id="customerEmail" name="customerEmail" formControlName="customerEmail"
+                placeholder="Enter the Customer Email" [(ngModel)]="selectedFoodOrder.customerEmail">
+            <span *ngIf="customerEmail?.invalid && customerEmail?.touched" style="color: red;">Please enter valid customer email</span>
+        </div>
+
+        <div class="form-group">
+            <label for="customerPhoneNumber">Enter Customer Contact Number</label>
+            <input type="number" class="form-control" id="customerPhoneNumber" name="customerPhoneNumber" formControlName="customerPhoneNumber"
+                placeholder="Enter the Customer Contact Number" [(ngModel)]="selectedFoodOrder.customerPhoneNumber">
+            <span *ngIf="customerPhoneNumber?.invalid && customerPhoneNumber?.touched" style="color: red;">Please enter valid contact number</span>
+        </div>
+
+        <div class="form-group">
+            <label for="orderCreatedTime">Enter Order Created Time</label>
+            <input type="text" class="form-control" id="orderCreatedTime" name="orderCreatedTime" formControlName="orderCreatedTime"
+                placeholder="Enter the Order Created Time" [(ngModel)]="selectedFoodOrder.orderCreatedTime">
+            <span *ngIf="orderCreatedTime?.invalid && orderCreatedTime?.touched" style="color: red;">Please enter valid Order Created Time</span>
+        </div>
+
+        <div class="form-group">
+            <label for="orderDeliveredTime">Enter Order Delivered Time</label>
+            <input type="text" class="form-control" id="orderDeliveredTime" name="orderDeliveredTime" formControlName="orderDeliveredTime"
+                placeholder="Enter the Order Delivered Time" [(ngModel)]="selectedFoodOrder.orderDeliveredTime">
+            <span *ngIf="orderDeliveredTime?.invalid && orderDeliveredTime?.touched" style="color: red;">Please enter valid Order Delivered Time</span>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Enter Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" formControlName="quantity"
+                placeholder="Enter the Quantity" [(ngModel)]="selectedFoodOrder.quantity">
+            <span *ngIf="quantity?.invalid && quantity?.touched" style="color: red;">Please enter valid Quantity</span>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Enter Order Status</label>
+            <input type="text" class="form-control" id="status" name="status" formControlName="status"
+                placeholder="Enter the Order Status" [(ngModel)]="selectedFoodOrder.status">
+            <span *ngIf="status?.invalid && status?.touched" style="color: red;">Please enter valid Order Status</span>
+        </div>
+
+        <div class="form-group">
+            <label for="staffId">Enter Staff Id</label>
+            <input type="number" class="form-control" id="staffId" name="staffId" formControlName="staffId"
+                placeholder="Enter the Staff id" [(ngModel)]="selectedFoodOrder.staff.id">
+            <span *ngIf="staffId?.invalid && staffId?.touched" style="color: red;">Please enter valid Staff id</span>
+        </div>
+        
+        <div class="form-group">
+            <label for="itemId">Enter Item Id's</label>
+            <input type="text" class="form-control" id="itemId" name="itemId" formControlName="itemId"
+                placeholder="Enter the Item Id's" [(ngModel)]="selectedFoodOrder.itemId">
+            <span *ngIf="itemId?.invalid && itemId?.touched" style="color: red;">Please enter valid Item Id's</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

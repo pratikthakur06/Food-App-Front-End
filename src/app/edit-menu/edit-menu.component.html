@@ -1,0 +1,12 @@
+<div class="container" style="background-color: #FECD70;">
+    <h3>Edit Menu</h3>
+    <form [formGroup]="updateForm" (ngSubmit)="editMenu()" style="border: 5px solid blue; padding: 40px;">
+        <div class="form-group">
+            <label for="branchManagerId">Enter Branch Manager Id</label>
+            <input type="number" class="form-control" id="branchManagerId" name="branchManagerId" formControlName="branchManagerId"
+                placeholder="Enter the Branch Manager Id" [(ngModel)]="selectedMenu.branchManager.id">
+            <span *ngIf="branchManagerId?.invalid && branchManagerId?.touched" style="color: red;">Please enter valid branch manager id</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

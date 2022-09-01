@@ -1,0 +1,31 @@
+<div style="background-color: #74aac7; height: 100%;">
+<h3>Item Details</h3>
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Type</th>
+                <th scope="col">Image URL</th>
+                <th scope="col">Menu ID</th>
+                <th scope="col">Update</th>
+            </tr>
+        </thead>
+        <tbody style="background-color: #74C7B8;">
+            <tr *ngFor="let r of result.t">
+                <td>{{r.id}}</td>
+                <td>{{r.name}}</td>
+                <td>{{r.description}}</td>
+                <td>{{r.price}}</td>
+                <td>{{r.type}}</td>
+                <td>{{r.imageURL}}</td>
+                <td>{{r.menu.id}}</td>
+                <td><button class="btn btn-primary" type="button" [routerLink]="['/edit-item/',r.id]">Update</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

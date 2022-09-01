@@ -1,0 +1,26 @@
+<div class="container" style="background-color: #FECD70;">
+    <h3>Update Admin Details</h3>
+    <form [formGroup]="updateForm" (ngSubmit)="editAdmin()" style="border: 5px solid blue; padding: 40px;">
+        <div class="form-group">
+            <label for="name">Enter name</label>
+            <input type="text" class="form-control" id="name" name="name" formControlName="name"
+                placeholder="Enter the User Name" [(ngModel)]="selectedAdmin.name">
+            <span *ngIf="name?.invalid && name?.touched" style="color: red;">Please enter valid name</span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Enter Email</label>
+            <input type="email" class="form-control" id="email" name="email" formControlName="email"
+                placeholder="Enter your Email ID" [(ngModel)]="selectedAdmin.email">
+            <span *ngIf="email?.invalid && email?.touched" style="color: red;">Please enter valid email Id</span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Enter password</label>
+            <input type="password" class="form-control" id="password" name="password" formControlName="password"
+                placeholder="Enter the Password" [(ngModel)]="selectedAdmin.password">
+            <span *ngIf="password?.invalid && password?.touched" style="color: red;">Please enter valid password</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

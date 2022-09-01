@@ -1,0 +1,53 @@
+<div class="container" style="background-color: #FECD70;">
+    <h3>Create Account</h3>
+    <form [formGroup]="registrationForm" (ngSubmit)="register()" style="border: 5px solid blue; padding: 40px;">
+        <div class="form-group">
+            <label for="name">Enter your name</label>
+            <input type="text" class="form-control" id="name" name="name" formControlName="name"
+                placeholder="Enter the User Name">
+            <span *ngIf="name?.invalid && name?.touched" style="color: red;">Please enter valid name</span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Enter your Email</label>
+            <input type="email" class="form-control" id="email" name="email" formControlName="email"
+                placeholder="Enter your Email ID">
+            <span *ngIf="email?.invalid && email?.touched" style="color: red;">Please enter valid email Id</span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Enter your password</label>
+            <input type="password" class="form-control" id="password" name="password" formControlName="password"
+                placeholder="Enter the Password">
+            <span *ngIf="password?.invalid && password?.touched" style="color: red;">Please enter valid password</span>
+        </div>
+
+        <div class="form-group">
+            <label for="role">Select your role</label><br>
+            <!-- <input type="text" class="form-control" id="role" name="role" formControl="role"
+                placeholder="Enter the Role"> -->
+            <select (change)="onChange($event)" class="form-control" name="role" id="role" formControlName="role">
+                <option value="admin">Admin</option>
+                <option value="branchManager">Branch Manager</option>
+                <option value="staff">Staff</option>
+            </select>
+            <span *ngIf="role?.invalid && role?.touched" style="color: red;">Please choose your role</span>
+        </div>
+
+        <div class="form-group" *ngIf="roleType=='branchManager'">
+            <label for="branchId">Enter the Branch ID</label>
+            <input type="number" class="form-control" id="branchId" name="branchId" formControlName="branchId"
+                placeholder="Enter the Branch ID">
+            <span *ngIf="branchId?.invalid && branchId?.touched" style="color: red;">Please enter branch Id</span>
+        </div>
+
+        <div class="form-group" *ngIf="roleType=='staff'">
+            <label for="branchManagerId">Enter your Branch Manager ID</label>
+            <input type="number" class="form-control" id="branchManagerId" name="branchManagerId"
+                formControlName="branchManagerId" placeholder="Enter the Branch Manager ID">
+            <span *ngIf="branchManagerId?.invalid && branchManagerId?.touched" style="color: red;">Please enter branch manager Id</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
